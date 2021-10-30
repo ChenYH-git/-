@@ -95,6 +95,39 @@ void QuestionGen :: GenBasePoly(int level){
 
 void QuestionGen :: UpgradePoly(){
     // 为多项式字符串添加括号
+	string basePoly;
+    string poly = basePoly;
+    int len=poly.length();
+    int m=0;
+    int i=0;
+    int cnt=0;
+    for(i=0;i<len;i++){
+    	if(poly[i]=='+'||poly[i]=='-'||poly[i]=='*'||poly[i]=='/'){
+    		cnt++;
+		}	
+	}
+	if(cnt==3){
+		for(i=0;i<len;i++){
+    	if(poly[i]=='+'||poly[i]=='-'||poly[i]=='*'||poly[i]=='/'){
+    		poly.insert(i+1,1,'(');break;
+		}	
+	} 
+	int flag=0;
+	for(m=0;m<len;m++){
+	
+		if(poly[m]=='+'||poly[m]=='-'||poly[m]=='*'||poly[m]=='/'){
+			flag++;
+		}
+		if(flag==3){
+			if(poly[m]=='+'||poly[m]=='-'||poly[m]=='*'||poly[m]=='/'){
+			poly.insert(m,1,')');
+			flag++;break;
+			}
+		}
+	}
+}  
+	basePoly=poly
+	
 };
 
 string QuestionGen::getPoly(int type,int level){
