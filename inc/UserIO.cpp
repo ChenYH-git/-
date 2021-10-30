@@ -2,13 +2,13 @@
 #include <stdio.h>
 
 int UserIO::getQuestionAmount(){
-    cout << "请输入题目数量";
+    cout << "请输入题目数量?" << endl;
     int a;
     cin >> a;
     return a; // 获取题目数量
 }
-string UserIO::getGrade(){
-    string s;
+int UserIO::getGrade(){
+    int s;
     cout << "请输入你的年级?" << endl;
     cin >> s;
     return s; // 获取年级

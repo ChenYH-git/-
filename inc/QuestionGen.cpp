@@ -95,7 +95,6 @@ void QuestionGen :: GenBasePoly(int level){
 
 void QuestionGen :: UpgradePoly(){
     // 为多项式字符串添加括号
-	string basePoly;
     string poly = basePoly;
     int len=poly.length();
     int m=0;
@@ -126,11 +125,14 @@ void QuestionGen :: UpgradePoly(){
 		}
 	}
 }  
-	basePoly=poly
+	upgradedPoly=poly;
 	
-};
+}
 
 string QuestionGen::getPoly(int type,int level){
+	if(level == 1 || level == 2) level = 0;
+	if(level == 3 || level == 4) level = 1;
+	if(level == 5 || level == 6) level = 2;
     GenBasePoly(level);
     UpgradePoly();
 

@@ -11,7 +11,7 @@ public:
 
 
     int getQuestionAmount(); // 获取题目数量
-    string getGrade(); // 获取年级
+    int getGrade(); // 获取年级
     double getUserAnswer();// 获取用户答案
 
     void putStringPoly(string poly);// 打印多项式字符串 如 89 - (84-4) =?

@@ -14,12 +14,10 @@ private:
     QuestionGen questionGen;
     StrManipulate strManipulate;
 
-    string grade;
+    int grade;
     int num;
     double userAnswer;
     int wrongAmount;
-
-    int gradeToLevel();
 
     /* data */
 public:
