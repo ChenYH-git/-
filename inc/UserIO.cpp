@@ -2,7 +2,10 @@
 #include <stdio.h>
 
 int UserIO::getQuestionAmount(){
-    return 0; // 获取题目数量
+    cout << "请输入题目数量";
+    int a;
+    cin >> a;
+    return a; // 获取题目数量
 }
 string UserIO::getGrade(){
     return ""; // 获取年级
