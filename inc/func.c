@@ -25,13 +25,12 @@ int HandleInputGrade(String a) {
     	return 5;
 	}
 }
-int HandleInputNum(){
+int HandleInputNum(int num){
 	cout<<"请输入题目数"<<endl;
-	int num;
 	cin >> num;
 	return num;
 }
-double HandleInputAnswer(){
+double HandleInputAnswer(int num){
 	double ans;
 	cin>>ans;
 	return ans;
@@ -127,21 +126,42 @@ int Level_34(data quesdata) {
 		}
 		return sum;
 }
+ #include<stack>
+ string list56(quesdata){
+ 	
+ 	//将 问题 例如：89 -（ 84 - 4 ) 转化为字符串 
+ }
+ double Level_56() {
+ 	 string question=list56(quesdata);
+        vector<int> stk;
+        char preSign = '+';
+        int num = 0;
+        int n = s.length();
+        for (int i = 0; i < n; ++i) {
+            if (isdigit(question[i])) {
+                num = num * 10 + double(question[i] - '0');
+            }
+            if (!isdigit(question[i]) && question[i] != ' ' || i == n - 1) {
+                switch (preSign) {
+                    case '+':
+                        stk.push_back(num);
+                        break;
+                    case '-':
+                        stk.push_back(-num);
+                        break;
+                    case '*':
+                        stk.back() *= num;
+                        break;
+                    default:
+                        stk.back() /= num;
+                }
+                preSign = question[i];
+                num = 0;
+            }
+        }
+        return accumulate(stk.begin(), stk.end(), 0);
+    }
 
-double Level_56(){
-    double num1;
-	int leng;
-	int i=0;
-	num1=quesdata.num[0];
-	while(i=0;i+2<quesdata.Strnum;i++)
-	switch(quesdata.num[i+1]){
-		case 1: num1+=quesdata.num[i+2];break;
-		case 2: num1-=quesdata.num[i+2];break;
-		case 3: num1*=quesdata.num[i+2];break;
-		case 4: num1/=quesdata.num[i+2];break;	
-	}
-	return num1;
-}
 
 
 
