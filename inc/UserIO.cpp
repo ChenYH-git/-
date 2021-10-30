@@ -8,15 +8,23 @@ int UserIO::getQuestionAmount(){
     return a; // 获取题目数量
 }
 string UserIO::getGrade(){
-    return ""; // 获取年级
+    string s;
+    cout << "请输入你的年级?" << endl;
+    cin >> s;
+    return s; // 获取年级
 };
 
 double UserIO::getUserAnswer(){
-    return 0.0; // 获取用户输入的答案
+     // 获取用户输入的答案
+	double result;
+	cin>>result;
+	return result;
+	
 };
 
 void UserIO::putStringPoly(string poly){
     // 输出自动生成的多项式
+	cout<<poly<<endl;
 };
 
 void UserIO::putRes(int num){
