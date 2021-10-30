@@ -21,7 +21,7 @@ void QuestionGen :: GenBasePoly(int level){
 
 	while(snum<2)snum++;
 	
-	if ( level == 1 || level == 2 ){
+	if ( level == 0 ){
 	for(i=1;i<snum;i++){
     	num1= rand() % 100;
     	sprintf(mid,"%d",num1);
@@ -41,7 +41,7 @@ void QuestionGen :: GenBasePoly(int level){
     memset(mid,'\0',sizeof(mid));
 	}
     
-    else if( level == 3 || level == 4 ){
+    else if( level == 1 ){
     	for(i=1;i<snum;i++){
     	num1= rand()% 10000;
     	sprintf(mid, "%d" ,num1);
@@ -65,7 +65,7 @@ void QuestionGen :: GenBasePoly(int level){
     	memset(mid,'\0',sizeof(mid));
     }
     
-    else if ( level == 5 || level == 6 ){
+    else if ( level == 2 ){
     	for(i=1;i<snum;i++){
     	num2= 0+ 1.0 * ( rand() % RAND_MAX ) / RAND_MAX * ( 10000 - 0);
     	gcvt(num2,6,mid);
